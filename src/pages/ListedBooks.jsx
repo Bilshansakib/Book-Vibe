@@ -10,7 +10,7 @@ const ListedBooks = () => {
       <div className=" text-center py-4 bg-slate-300 rounded-2xl">
         <p className="font-extrabold text-4xl ">Books</p>
       </div>
-      <div className="text-center ">
+      <div className="container mx-auto text-center mt-4">
         <div className=" dropdown dropdown-bottom">
           <div tabIndex={0} role="button" className="btn btn-primary m-1">
             Sort By
@@ -28,17 +28,17 @@ const ListedBooks = () => {
           </ul>
         </div>
       </div>
-      <section className="container mx-auto">
-        <div className="flex items-center -mx-4 overflow-x-auto overflow-y-hidden lg:justify-start sm:justify-center flex-nowrap dark:bg-gray-100 dark:text-gray-800">
+      <section className="container mx-auto mt-4">
+        <div className="flex items-center mx-4 overflow-x-auto overflow-y-hidden lg:justify-start sm:justify-center flex-nowrap dark:bg-gray-100 dark:text-gray-800">
           <Link
             to=""
             onClick={() => setTabIndex(0)}
             className={`flex items-center flex-shrink-0 px-5 py-3 space-x-2 ${
-              tabIndex === 0 ? "border border-b-0" : "border-b"
+              tabIndex === 0 ? "border-2 border-b-0" : "border-b"
             } rounded-t-lg dark:border-gray-600 dark:text-gray-900`}
           >
-            <AiOutlineRead />
-            <span>Read Books</span>
+            <AiOutlineRead className="size-6" />
+            <span className="font-semibold">Read Books</span>
           </Link>
           <Link
             to={`wishlist`}
@@ -47,8 +47,8 @@ const ListedBooks = () => {
               tabIndex === 1 ? "border border-b-0" : "border-b"
             } rounded-t-lg dark:border-gray-600 dark:text-gray-900`}
           >
-            <CiSaveUp2 />
-            <span>Wishlist Books</span>
+            <CiSaveUp2 className="size-6" />
+            <span className="font-semibold">Wishlist Books</span>
           </Link>
         </div>
         <Outlet></Outlet>

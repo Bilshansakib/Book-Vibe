@@ -20,16 +20,15 @@ const ReadBooks = () => {
 
     // setBooks(storedBooks);
   }, []);
-  // const { id, image, tags, bookName, author, category, rating } = book;
-  // console.log(book);
   return (
-    <div className="container mx-auto  grid grid-cols-1 lg:grid-cols-3 gap-4">
-      <h2>{bookCards.length}</h2>
-      {bookCards.map((book) => (
-        // <Book key={book.id} book={book}></Book>
-        <ReadCard key={book.id} book={book}></ReadCard>
-      ))}
-    </div>
+    <>
+      <div className="container mx-auto  gap-4">
+        {bookCards.map((book) => (
+          // <Book key={book.id} book={book}></Book>
+          <ReadCard key={book.id} book={book}></ReadCard>
+        ))}
+      </div>
+    </>
   );
 };
 

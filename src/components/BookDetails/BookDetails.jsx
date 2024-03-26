@@ -1,5 +1,6 @@
 import { useLoaderData, useParams } from "react-router-dom";
-import { saveBooks } from "../Utility";
+import { saveBooks, saveWishList } from "../Utility";
+
 import toast from "react-hot-toast";
 
 const BookDetails = () => {
@@ -30,7 +31,12 @@ const BookDetails = () => {
     // saveBooks(book);
     // console.log(book);
   };
-
+  const handleWishList = (blog) => {
+    // saveBooks(Id);
+    saveWishList(blog);
+    console.log(blog);
+    // toast.success("Add to wishlist successfully");
+  };
   return (
     <div className="container mx-auto">
       <div className="flex flex-col overflow-hidden rounded-md shadow-sm lg:flex-row">
@@ -96,7 +102,12 @@ const BookDetails = () => {
             >
               Read
             </button>
-            <button className="btn btn-primary">Wishlist</button>
+            <button
+              onClick={() => handleWishList(book)}
+              className="btn btn-primary hover:scale-105 overflow-hidden"
+            >
+              Wishlist
+            </button>
           </div>
         </div>
       </div>

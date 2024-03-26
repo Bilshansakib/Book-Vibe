@@ -7,19 +7,31 @@ export const getBooks = () => {
   }
   return books;
 };
+// get wishlist
 
-// save
+export const getWishLists = () => {
+  let wishBooks = [];
+  const storedBooks = localStorage.getItem("wishBooks");
+  if (storedBooks) {
+    wishBooks = JSON.parse(storedBooks);
+  }
+  return wishBooks;
+};
 
-// export const saveBooks = (book) => {
-//   let books = getBooks();
-//   const isExist = books.find((e) => e.id === book.id);
-//   if (isExist) {
-//     return toast.error("Already Read!");
-//   }
-//   books.push(book);
-//   localStorage.setItem("books", JSON.stringify(books));
-//   toast.success("Book read Successfully");
-// };
+// save wishlist
+
+export const saveWishList = (book) => {
+  let wishBooks = getBooks();
+  const isExist = wishBooks.find((e) => e.id === book.id);
+  if (isExist) {
+    return toast.error("Already Listed!");
+  }
+  wishBooks.push(book);
+  localStorage.setItem("wishBooks", JSON.stringify(wishBooks));
+  toast.success("Add to Wishlist Successfully");
+};
+
+// save read
 
 export const saveBooks = (id) => {
   const storeBooks = getBooks();
@@ -31,6 +43,7 @@ export const saveBooks = (id) => {
 };
 
 // delete
+
 export const deleteBlog = (id) => {
   let blogs = getBooks();
   const remaining = blogs.filter((b) => b.id !== id);
