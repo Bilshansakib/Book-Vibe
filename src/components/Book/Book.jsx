@@ -8,8 +8,8 @@ const Book = ({ book }) => {
       <div className="flex flex-col max-w-lg p-6 space-y-6 overflow-hidden rounded-lg shadow-md dark:bg-gray-50 dark:text-gray-800">
         <div>
           <img
-            src="https://source.unsplash.com/random/100x100/?5"
-            alt=""
+            src={image}
+            alt={bookName}
             className=" rounded-xl object-cover w-full mb-4 h-60 sm:h-96 dark:bg-gray-500"
           />
           <div className="items-start text-left space-y-2 pt-1">
