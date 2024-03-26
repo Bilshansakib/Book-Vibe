@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { AiOutlineRead } from "react-icons/ai";
 import { CiSaveUp2 } from "react-icons/ci";
-import { Link } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 
 const ListedBooks = () => {
   const [tabIndex, setTabIndex] = useState(0);
@@ -10,7 +10,7 @@ const ListedBooks = () => {
       <div className=" text-center py-4 bg-slate-300 rounded-2xl">
         <p className="font-extrabold text-4xl ">Books</p>
       </div>
-      <div className="text-center">
+      <div className="text-center ">
         <div className=" dropdown dropdown-bottom">
           <div tabIndex={0} role="button" className="btn btn-primary m-1">
             Sort By
@@ -28,8 +28,8 @@ const ListedBooks = () => {
           </ul>
         </div>
       </div>
-      <section>
-        <div className="flex items-center -mx-4 overflow-x-auto overflow-y-hidden sm:justify-center flex-nowrap dark:bg-gray-100 dark:text-gray-800">
+      <section className="container mx-auto">
+        <div className="flex items-center -mx-4 overflow-x-auto overflow-y-hidden lg:justify-start sm:justify-center flex-nowrap dark:bg-gray-100 dark:text-gray-800">
           <Link
             to=""
             onClick={() => setTabIndex(0)}
@@ -51,6 +51,7 @@ const ListedBooks = () => {
             <span>Wishlist Books</span>
           </Link>
         </div>
+        <Outlet></Outlet>
       </section>
     </div>
   );

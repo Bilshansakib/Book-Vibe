@@ -1,4 +1,5 @@
 import { useLoaderData, useParams } from "react-router-dom";
+import { saveBooks } from "../Utility";
 
 const BookDetails = () => {
   const books = useLoaderData();
@@ -17,6 +18,11 @@ const BookDetails = () => {
     rating,
     yearOfPublishing,
   } = book;
+
+  const handleRead = (book) => {
+    saveBooks(book);
+    console.log(book);
+  };
 
   return (
     <div className="container mx-auto">
@@ -77,7 +83,12 @@ const BookDetails = () => {
             </div>
           </div>
           <div className="mt-6">
-            <button className="btn mr-4 text-[#23BE0A]">Read</button>
+            <button
+              onClick={() => handleRead(book)}
+              className="btn mr-4 text-[#23BE0A]"
+            >
+              Read
+            </button>
             <button className="btn btn-primary">Wishlist</button>
           </div>
         </div>
