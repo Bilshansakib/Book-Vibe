@@ -1,25 +1,34 @@
+import { useEffect, useState } from "react";
 import { useLoaderData } from "react-router-dom";
+import { getBooks } from "../Utility";
+import Book from "../Book/Book";
+import ReadCard from "../ReadCard/ReadCard";
 
 const ReadBooks = () => {
-  const book = useLoaderData();
+  const books = useLoaderData();
+
+  // const [books, setBooks] = useState([]);
+  const [bookCards, setBookCards] = useState([]);
+
+  useEffect(() => {
+    const storedBooks = getBooks();
+    if (books.length > 0) {
+      const bookStored = books.filter((book) => storedBooks.includes(book.id));
+      // console.log(bookStored);
+      setBookCards(bookStored);
+    }
+
+    // setBooks(storedBooks);
+  }, []);
   // const { id, image, tags, bookName, author, category, rating } = book;
   // console.log(book);
   return (
-    <div className="card card-side bg-base-100 shadow-xl">
-      <figure>
-        <img
-          src="https://daisyui.com/images/stock/photo-1635805737707-575885ab0820.jpg"
-          alt="Movie"
-        />
-      </figure>
-      <div className="card-body">
-        <h2 className="card-title">{book.bookName}</h2>
-        <p>Click the button to watch on Jetflix app.</p>
-        <p>{book.author}</p>
-        <div className="card-actions justify-end">
-          <button className="btn btn-primary">Watch</button>
-        </div>
-      </div>
+    <div className="container mx-auto  grid grid-cols-1 lg:grid-cols-3 gap-4">
+      <h2>{bookCards.length}</h2>
+      {bookCards.map((book) => (
+        // <Book key={book.id} book={book}></Book>
+        <ReadCard key={book.id} book={book}></ReadCard>
+      ))}
     </div>
   );
 };

@@ -1,5 +1,6 @@
 import { useLoaderData, useParams } from "react-router-dom";
 import { saveBooks } from "../Utility";
+import toast from "react-hot-toast";
 
 const BookDetails = () => {
   const books = useLoaderData();
@@ -19,9 +20,15 @@ const BookDetails = () => {
     yearOfPublishing,
   } = book;
 
-  const handleRead = (book) => {
-    saveBooks(book);
-    console.log(book);
+  // const handleRead = (book) => {
+  //   saveBooks(book);
+  //   // console.log(book);
+  // };
+  const handleRead = () => {
+    saveBooks(Id);
+    toast.success("Marked as read successfully");
+    // saveBooks(book);
+    // console.log(book);
   };
 
   return (

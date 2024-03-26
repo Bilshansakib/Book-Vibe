@@ -10,15 +10,24 @@ export const getBooks = () => {
 
 // save
 
-export const saveBooks = (book) => {
-  let books = getBooks();
-  const isExist = books.find((e) => e.id === book.id);
-  if (isExist) {
-    return toast.error("Already Read!");
+// export const saveBooks = (book) => {
+//   let books = getBooks();
+//   const isExist = books.find((e) => e.id === book.id);
+//   if (isExist) {
+//     return toast.error("Already Read!");
+//   }
+//   books.push(book);
+//   localStorage.setItem("books", JSON.stringify(books));
+//   toast.success("Book read Successfully");
+// };
+
+export const saveBooks = (id) => {
+  const storeBooks = getBooks();
+  const exists = storeBooks.find((bookId) => bookId === id);
+  if (!exists) {
+    storeBooks.push(id);
+    localStorage.setItem("books", JSON.stringify(storeBooks));
   }
-  books.push(book);
-  localStorage.setItem("books", JSON.stringify(books));
-  toast.success("Book read Successfully");
 };
 
 // delete
