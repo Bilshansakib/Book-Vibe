@@ -2,6 +2,7 @@ import { CiLocationOn } from "react-icons/ci";
 import { BsFillPeopleFill } from "react-icons/bs";
 import { PiNotebookLight } from "react-icons/pi";
 import BookDetails from "./../BookDetails/BookDetails";
+import { Link } from "react-router-dom";
 const ReadCard = ({ book }) => {
   const {
     id,
@@ -74,9 +75,11 @@ const ReadCard = ({ book }) => {
           <button className="btn text-[#FFAC33] rounded-full">
             Rating: {rating}
           </button>
-          <button className="btn bg-[#23BE0A] text-white rounded-full">
-            View details
-          </button>
+          <Link to={`/book/${id}`}>
+            <button className="btn bg-[#23BE0A] text-white rounded-full">
+              View details
+            </button>
+          </Link>
         </div>
       </div>
     </div>
