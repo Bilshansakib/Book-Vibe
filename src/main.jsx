@@ -14,6 +14,7 @@ import ReadBooks from "./components/ReadBooks/ReadBooks";
 import WishListBooks from "./components/WishListBooks/WishListBooks";
 import { Toaster } from "react-hot-toast";
 import BookGalley from "./components/BookGallery/BookGalley";
+import Faq from "./components/FAQ/Faq";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -51,6 +52,10 @@ const router = createBrowserRouter([
         path: "/gallery",
         element: <BookGalley></BookGalley>,
         loader: () => fetch("/public/Books.json"),
+      },
+      {
+        path: "/Faq",
+        element: <Faq></Faq>,
       },
       {
         path: "/book/:id",

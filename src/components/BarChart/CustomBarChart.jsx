@@ -37,7 +37,7 @@ const CustomBarChart = () => {
     }
     setNames(emptyNames);
     setPages(emptyPages);
-  }, []);
+  }, [data]);
 
   // // useEffect(() => {
   //   const emptyBookNames = [];
@@ -66,15 +66,15 @@ const CustomBarChart = () => {
         <Chart
           type="bar"
           width={1100}
-          height={400}
+          height={500}
           series={[
             {
-              name: "--bar Chart---",
+              name: "pages",
               data: readBookPages,
             },
           ]}
           options={{
-            title: { text: "BarChart: Name/Page " },
+            title: { text: " BarChart of: Read List " },
             style: { fontSize: 30 },
             colors: ["#23BE0A"],
 
