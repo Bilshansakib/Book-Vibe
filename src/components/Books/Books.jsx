@@ -10,7 +10,7 @@ const Books = () => {
       .then((data) => setBooks(data));
   }, []);
   return (
-    <div>
+    <div className="container mx-auto">
       <div className="text-center">
         <h2 className="text-5xl font-extrabold">Books : {books.length}</h2>
         <div className="container mx-auto  grid grid-cols-1 lg:grid-cols-3 gap-4">

@@ -21,7 +21,7 @@ const Book = ({ book }) => {
                 #{tags[1]}
               </span>
             </div>
-            <h2 className="mb-1 text-xl font-semibold">{bookName}</h2>
+            <h2 className="mb-1 text-2xl font-semibold">{bookName}</h2>
             <p className="text-sm opacity-80 font-semibold dark:text-gray-600">
               By : {author}
             </p>

@@ -1,7 +1,8 @@
-import { useLoaderData, useParams } from "react-router-dom";
+import { Link, useLoaderData, useParams } from "react-router-dom";
 import { saveBooks, saveWishList } from "../Utility";
 
 import toast from "react-hot-toast";
+import { MdOutlineKeyboardBackspace } from "react-icons/md";
 
 const BookDetails = () => {
   const books = useLoaderData();
@@ -40,11 +41,23 @@ const BookDetails = () => {
   return (
     <div className="container mx-auto">
       <div className="grid grid-cols-1 lg:grid-cols-2 overflow-hidden rounded-md shadow-sm lg:flex-row">
-        <img
-          src={image}
-          alt=""
-          className="h-90 rounded-xl dark:bg-gray-500 aspect-video"
-        />
+        <div>
+          <img
+            src={image}
+            alt=""
+            className="h-90 rounded-xl dark:bg-gray-500 aspect-video"
+          />
+          <Link
+            to={"/"}
+            rel="noopener noreferrer"
+            className="px-8 py-3 font-semibold pt-4 justify-center gap-4 flex items-center rounded"
+          >
+            <span>
+              <MdOutlineKeyboardBackspace className="size-8" />
+            </span>
+            <span>Back to homepage</span>
+          </Link>
+        </div>
         <div className=" flex flex-col justify-center flex-1 p-6 dark:bg-gray-50">
           <h3 className=" text-3xl font-bold">{bookName}</h3>
 
