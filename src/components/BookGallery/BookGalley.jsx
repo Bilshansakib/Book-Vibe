@@ -1,11 +1,24 @@
 import { useEffect, useState } from "react";
-import { useLoaderData } from "react-router-dom";
+import { MdOutlineKeyboardBackspace } from "react-icons/md";
+import { Link, useLoaderData } from "react-router-dom";
 
 const BookGalley = () => {
   const Gallery = useLoaderData();
 
   return (
-    <section>
+    <section className="container mx-auto">
+      <h2 className=" mx-auto mt-4 text-center text-3xl bg-blue-100 py-3 font-semibold">
+        Book Gallery
+      </h2>
+      <Link
+        to={"/"}
+        rel="noopener noreferrer"
+        className="px-8 py-3 font-semibold justify-center gap-4 flex items-center rounded"
+      >
+        <span>
+          <MdOutlineKeyboardBackspace />
+        </span>
+      </Link>
       <section className="py-6 dark:bg-gray-100">
         <div className="container flex flex-col justify-center p-4 mx-auto">
           <div className="grid grid-cols-1 gap-4 lg:grid-cols-4 sm:grid-cols-2">
@@ -54,28 +67,18 @@ const BookGalley = () => {
               className="w-full h-full rounded shadow-sm min-h-48 dark:bg-gray-500 aspect-square"
               src={Gallery[7].image}
             />
-            <img
-              alt=""
-              className="w-full h-full rounded shadow-sm min-h-48 dark:bg-gray-500 aspect-square"
-              src={Gallery[6].image}
-            />
-            <img
-              alt=""
-              className="w-full h-full rounded shadow-sm min-h-48 dark:bg-gray-500 aspect-square"
-              src={Gallery[8].image}
-            />
-            <img
-              alt=""
-              className="w-full h-full rounded shadow-sm min-h-48 dark:bg-gray-500 aspect-square"
-              src="https://source.unsplash.com/random/200x200/?6"
-            />
-            <img
-              alt=""
-              className="w-full h-full rounded shadow-sm min-h-48 dark:bg-gray-500 aspect-square"
-              src={Gallery[1].image}
-            />
           </div>
         </section>
+        <Link
+          to={"/"}
+          rel="noopener noreferrer"
+          className="px-8 py-3 font-semibold justify-center gap-4 flex items-center rounded"
+        >
+          <span>
+            <MdOutlineKeyboardBackspace />
+          </span>
+          <span>Back to homepage</span>
+        </Link>
       </section>
     </section>
   );

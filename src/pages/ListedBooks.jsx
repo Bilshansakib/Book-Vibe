@@ -5,9 +5,10 @@ import { Link, Outlet } from "react-router-dom";
 
 const ListedBooks = () => {
   const [tabIndex, setTabIndex] = useState(0);
+  // const [sortIndex, setSortIndex] = useState(0);
   return (
     <div className="container mx-auto">
-      <div className=" text-center py-4 bg-slate-300 rounded-2xl">
+      <div className=" text-center py-4 bg-blue-100 rounded-2xl">
         <p className="font-extrabold text-4xl ">Books</p>
       </div>
       <div className="container mx-auto text-center mt-4">
@@ -17,13 +18,16 @@ const ListedBooks = () => {
           </div>
           <ul
             tabIndex={0}
-            className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52"
+            className="dropdown-content font-semibold z-[1] menu p-2 shadow bg-base-100 rounded-box w-52"
           >
             <li>
-              <a>Item 1</a>
+              <a>Rating</a>
             </li>
             <li>
-              <a>Item 2</a>
+              <a>Number of pages</a>
+            </li>
+            <li>
+              <a>Publish year</a>
             </li>
           </ul>
         </div>

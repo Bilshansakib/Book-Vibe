@@ -21,6 +21,12 @@ const ReadBooks = () => {
 
     // setBooks(storedBooks);
   }, [books]);
+  if (bookCards.length < 1)
+    return (
+      <h1 className=" mt-10 text-center font-bold bg-blue-200 py-6">
+        You haven't read Yet!
+      </h1>
+    );
   return (
     <>
       <div className="container mx-auto mt-4 space-y-4">
