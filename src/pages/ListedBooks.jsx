@@ -1,10 +1,47 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { AiOutlineRead } from "react-icons/ai";
 import { CiSaveUp2 } from "react-icons/ci";
-import { Link, Outlet } from "react-router-dom";
+import { Link, Outlet, useLoaderData } from "react-router-dom";
+import { getBooks } from "../components/Utility";
 
 const ListedBooks = () => {
+  const books = useLoaderData();
   const [tabIndex, setTabIndex] = useState(0);
+
+  const [sortBooks, setSortBooks] = useState([]);
+
+  const [displayBooks, setDisplayBooks] = useState([]);
+
+  const handleFilterMachine = (filter) => {
+    if (filter === "all") {
+      setDisplayBooks(sortBooks);
+      console.log(sortBooks);
+    } else if (filter === "Number of pages") {
+      const pages = sortBooks.filter((book) => book.totalPages > 240);
+      setDisplayBooks(pages);
+    } else if (filter !== "Publish year") {
+      const publishYear = sortBooks.filter(
+        (book) => book.yearOfPublishing === "2003"
+      );
+      setDisplayBooks(publishYear);
+    }
+  };
+
+  useEffect(() => {
+    const storedSortBooks = getBooks();
+    if (books.length > 0) {
+      const newStoredSortBooks = [];
+      for (const id of storedSortBooks) {
+        const book = books.find((book) => book.id === id);
+        if (book) {
+          newStoredSortBooks.push(book);
+        }
+      }
+      setSortBooks(newStoredSortBooks);
+      setDisplayBooks(newStoredSortBooks);
+      // console.log(newStoredSortBooks);
+    }
+  }, [books]);
   // const [sortIndex, setSortIndex] = useState(0);
   return (
     <div className="container mx-auto">
@@ -20,13 +57,13 @@ const ListedBooks = () => {
             tabIndex={0}
             className="dropdown-content font-semibold z-[1] menu p-2 shadow bg-base-100 rounded-box w-52"
           >
-            <li>
+            <li onClick={() => handleFilterMachine("all")}>
               <a>Rating</a>
             </li>
-            <li>
+            <li onClick={() => handleFilterMachine("Number of pages")}>
               <a>Number of pages</a>
             </li>
-            <li>
+            <li onClick={() => handleFilterMachine("Publish year")}>
               <a>Publish year</a>
             </li>
           </ul>

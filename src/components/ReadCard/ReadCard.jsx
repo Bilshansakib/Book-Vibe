@@ -1,7 +1,6 @@
 import { CiLocationOn } from "react-icons/ci";
 import { BsFillPeopleFill } from "react-icons/bs";
 import { PiNotebookLight } from "react-icons/pi";
-import BookDetails from "./../BookDetails/BookDetails";
 import { Link } from "react-router-dom";
 const ReadCard = ({ book }) => {
   const {

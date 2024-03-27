@@ -25,7 +25,7 @@ const Banner = () => {
             <Link
               to={`/gallery`}
               rel="noopener noreferrer"
-              className="px-8 btn btn-secondary py-3 text-lg font-semibold border rounded dark:border-gray-800"
+              className="px-8 btn bg-blue-400 py-3 text-lg font-semibold border rounded dark:border-gray-800"
             >
               Gallery
             </Link>

@@ -41,6 +41,17 @@ export const saveBooks = (id) => {
     localStorage.setItem("books", JSON.stringify(storeBooks));
   }
 };
+// export const saveBooks = (id) => {
+//   const storeBooks = getBooks();
+//   const exists = storeBooks.find((bookId) => bookId === id);
+//   if (!exists) {
+//     storeBooks.push(id);
+//     localStorage.setItem("books", JSON.stringify(storeBooks));
+//   }
+//   storeBooks.push(id);
+//   localStorage.setItem("books", JSON.stringify(storeBooks));
+//   toast.success("Marked as read successfully");
+// };
 
 // delete
 

@@ -1,18 +1,3 @@
-// import { useEffect, useState } from "react";
-// import { useLoaderData } from "react-router-dom";
-// import { getBooks } from "../Utility";
-// import WishListCard from "../WishListCard/WishListCard";
-// const WishListBooks = () => {
-//   // const [bookCards, setBookCards] = useState([]);
-//   // const books = useLoaderData();
-//   // useEffect(() => {
-//   //   const storedBooks = getBooks();
-//   //   if (books.length > 0) {
-//   //     const bookStored = books.filter((book) => storedBooks.includes(book.id));
-//   //     // console.log(bookStored);
-//   //     setBookCards(bookStored);
-//   //   }
-
 import { useEffect, useState } from "react";
 import { getWishLists } from "../Utility";
 import WishListCard from "../WishListCard/WishListCard";
@@ -58,8 +43,7 @@ const WishListBooks = () => {
   if (wishList.length < 1)
     return (
       <h1 className="mt-10 text-center font-bold bg-blue-200 py-6">
-        {" "}
-        No WishList Added{" "}
+        No WishList Added
       </h1>
     );
   return (

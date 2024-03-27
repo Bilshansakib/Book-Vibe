@@ -21,6 +21,30 @@ const ReadBooks = () => {
 
     // setBooks(storedBooks);
   }, [books]);
+  // ------------------> sort machine
+
+  const [sortBooks, setSortBooks] = useState([]);
+
+  const [displayBooks, setDisplayBooks] = useState([]);
+
+  useEffect(() => {
+    const storedSortBooks = getBooks();
+    if (books.length > 0) {
+      const newStoredSortBooks = [];
+      for (const id of storedSortBooks) {
+        const book = books.find((book) => book.id === id);
+        if (book) {
+          newStoredSortBooks.push(book);
+        }
+      }
+      setSortBooks(newStoredSortBooks);
+      setDisplayBooks(newStoredSortBooks);
+      // console.log(newStoredSortBooks);
+    }
+  }, [books]);
+
+  // ------------------>
+
   if (bookCards.length < 1)
     return (
       <h1 className=" mt-10 text-center font-bold bg-blue-200 py-6">

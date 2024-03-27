@@ -37,7 +37,7 @@ const CustomBarChart = () => {
     }
     setNames(emptyNames);
     setPages(emptyPages);
-  }, [data]);
+  }, []);
 
   // // useEffect(() => {
   //   const emptyBookNames = [];
