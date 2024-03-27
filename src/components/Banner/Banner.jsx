@@ -22,6 +22,13 @@ const Banner = () => {
             >
               View The List
             </Link>
+            <Link
+              to={`/ListedBooks`}
+              rel="noopener noreferrer"
+              className="px-8 btn btn-secondary py-3 text-lg font-semibold border rounded dark:border-gray-800"
+            >
+              Gallery
+            </Link>
           </div>
         </div>
         <div className="flex items-center justify-center p-6 mt-8 lg:mt-0 h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128">

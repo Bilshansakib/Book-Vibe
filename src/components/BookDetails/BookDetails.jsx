@@ -39,14 +39,14 @@ const BookDetails = () => {
   };
   return (
     <div className="container mx-auto">
-      <div className="flex flex-col overflow-hidden rounded-md shadow-sm lg:flex-row">
+      <div className="grid grid-cols-1 lg:grid-cols-2 overflow-hidden rounded-md shadow-sm lg:flex-row">
         <img
-          src="https://source.unsplash.com/640x480/?1"
+          src={image}
           alt=""
           className="h-90 rounded-xl dark:bg-gray-500 aspect-video"
         />
-        <div className="flex flex-col justify-center flex-1 p-6 dark:bg-gray-50">
-          <h3 className="text-3xl font-bold">{bookName}</h3>
+        <div className=" flex flex-col justify-center flex-1 p-6 dark:bg-gray-50">
+          <h3 className=" text-3xl font-bold">{bookName}</h3>
 
           <p className="my-6 dark:text-gray-600 font-semibold text-lg">
             By : {author}

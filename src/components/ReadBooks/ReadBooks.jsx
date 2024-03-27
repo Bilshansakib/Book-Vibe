@@ -3,6 +3,7 @@ import { useLoaderData } from "react-router-dom";
 import { getBooks } from "../Utility";
 import Book from "../Book/Book";
 import ReadCard from "../ReadCard/ReadCard";
+import toast from "react-hot-toast";
 
 const ReadBooks = () => {
   const books = useLoaderData();
@@ -19,7 +20,7 @@ const ReadBooks = () => {
     }
 
     // setBooks(storedBooks);
-  }, []);
+  }, [books]);
   return (
     <>
       <div className="container mx-auto mt-4 space-y-4">

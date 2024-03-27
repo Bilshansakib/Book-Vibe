@@ -54,7 +54,7 @@ const WishListBooks = () => {
       );
       setWishList(wishListStored);
     }
-  }, []);
+  }, [books]);
   if (wishList.length < 1)
     return (
       <h1 className=" mt-10 text-center font-bold"> No WishList Added </h1>
@@ -64,9 +64,9 @@ const WishListBooks = () => {
       <p className="mt-10 text-center font-bold bg-slate-200 p-10 rounded-2xl">
         Numbers Of wishlist: {wishList.length}
       </p>
-      {/* {wishList[0].author}
-      {/* {wishList[1].author}
-      {wishList[2].author} */}
+      {wishList[0].author}
+      {wishList[1].author}
+      {wishList[2].author}
     </div>
   );
 };
