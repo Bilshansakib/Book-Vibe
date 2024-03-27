@@ -35,7 +35,7 @@ const BookDetails = () => {
   const handleWishList = (blog) => {
     // saveBooks(Id);
     saveWishList(blog);
-    console.log(blog);
+    // console.log(blog);
     // toast.success("Add to wishlist successfully");
   };
   return (

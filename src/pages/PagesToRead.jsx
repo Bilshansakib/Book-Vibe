@@ -2,8 +2,7 @@ import CustomBarChart from "../components/BarChart/CustomBarChart";
 
 const PagesToRead = () => {
   return (
-    <div>
-      <h2>Pages To Read</h2>
+    <div className="mt-8">
       <CustomBarChart></CustomBarChart>
     </div>
   );
