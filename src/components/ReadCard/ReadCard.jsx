@@ -17,12 +17,12 @@ const ReadCard = ({ book }) => {
     totalPages,
   } = book;
   return (
-    <div className="card card-side bg-base-100 shadow-xl">
-      <figure>
+    <div className="card card-side  bg-base-100 shadow-xl">
+      <figure className="bg-slate-50">
         <img
-          src="https://daisyui.com/images/stock/photo-1635805737707-575885ab0820.jpg"
+          src={image}
           alt="Book"
-          className="p-2 rounded-2xl object-cover"
+          className="p-2 max-h-96 w-72 rounded-2xl object-cover"
         />
       </figure>
       <div className="card-body">

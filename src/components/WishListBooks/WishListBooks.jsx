@@ -61,7 +61,7 @@ const WishListBooks = () => {
     );
   return (
     <div>
-      <p className="mt-10 text-center font-bold">
+      <p className="mt-10 text-center font-bold bg-slate-200 p-10 rounded-2xl">
         Numbers Of wishlist: {wishList.length}
       </p>
       {/* {wishList[0].author}
